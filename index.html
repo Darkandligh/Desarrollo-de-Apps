@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio DOM - Lista de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background: #e9ecef;
+            padding: 8px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        li button {
+            background-color: #dc3545;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        li button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mis Tareas Pendientes</h1>
+        <div class="form-group">
+            <input type="text" id="taskInput" placeholder="Escribe una nueva tarea...">
+            <button id="addTaskBtn">Agregar</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // Seleccionamos los elementos del DOM
+        const taskInput = document.getElementById('taskInput');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskList = document.getElementById('taskList');
+
+        // Función para agregar una tarea
+        function addTask() {
+            const text = taskInput.value.trim();
+            
+            if (text === '') {
+                alert('Por favor, escribe una tarea.');
+                return;
+            }
+
+            // Crear elementos dinámicamente
+            const li = document.createElement('li');
+            li.textContent = text;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Eliminar';
+            
+            // Evento para borrar la tarea individual de la lista
+            deleteBtn.addEventListener('click', function() {
+                taskList.removeChild(li);
+            });
+
+            // Unir los elementos creados al DOM
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+
+            // Limpiar el campo de texto
+            taskInput.value = '';
+        }
+
+        // Escuchar el evento de clic en el botón principal
+        addTaskBtn.addEventListener('click', addTask);
+
+        // Permitir agregar la tarea presionando la tecla "Enter"
+        taskInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+    </script>
+</body>
+</html>
