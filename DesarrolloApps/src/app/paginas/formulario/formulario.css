@@ -1,0 +1,155 @@
+.calculadora {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #d8dce3;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 6%);
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.fila {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.fila .campo {
+  flex: 1;
+}
+
+.campo {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.campo span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5060;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+  color: #1c1f26;
+  background: #fff;
+  border: 1px solid #c6ccd6;
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #3763dd;
+  outline-offset: 1px;
+}
+
+input[readonly] {
+  background: #f3f5f9;
+  font-weight: 600;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.primario {
+  flex: 1;
+  padding: 0.6rem;
+  color: #fff;
+  background: #3763dd;
+  border: 1px solid #3763dd;
+}
+
+.primario:hover {
+  background: #2c51ba;
+}
+
+.secundario {
+  padding: 0.6rem 1rem;
+  color: #333a48;
+  background: #eef0f5;
+  border: 1px solid #c6ccd6;
+}
+
+.secundario:hover {
+  background: #e2e5ec;
+}
+
+.error {
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.7rem;
+  color: #8f1d1d;
+  background: #fdeaea;
+  border: 1px solid #f2c2c2;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.historial {
+  padding-top: 1rem;
+  border-top: 1px solid #e4e7ed;
+}
+
+.historial-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.enlace {
+  padding: 0;
+  color: #3763dd;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+.historial ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historial li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #f0f2f6;
+  font-size: 0.92rem;
+}
+
+.historial li:last-child {
+  border-bottom: none;
+}
+
+.vacio {
+  margin: 0;
+  color: #7a8090;
+  font-size: 0.9rem;
+}

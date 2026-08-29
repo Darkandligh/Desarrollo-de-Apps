@@ -1,0 +1,72 @@
+<section class="calculadora">
+  <h1>Calculadora</h1>
+
+  <div class="fila">
+    <label class="campo">
+      <span>Número 1</span>
+      <input
+        type="number"
+        inputmode="decimal"
+        placeholder="0"
+        [value]="numero1()"
+        (input)="actualizarNumero1($event)"
+      />
+    </label>
+
+    <label class="campo">
+      <span>Número 2</span>
+      <input
+        type="number"
+        inputmode="decimal"
+        placeholder="0"
+        [value]="numero2()"
+        (input)="actualizarNumero2($event)"
+      />
+    </label>
+  </div>
+
+  <label class="campo">
+    <span>Operación</span>
+    <select [value]="operacion()" (change)="actualizarOperacion($event)">
+      @for (opcion of operaciones; track opcion.valor) {
+        <option [value]="opcion.valor">{{ opcion.etiqueta }}</option>
+      }
+    </select>
+  </label>
+
+  <div class="acciones">
+    <button type="button" class="primario" (click)="calcular()">Calcular</button>
+    <button type="button" class="secundario" (click)="limpiar()">Limpiar</button>
+  </div>
+
+  <label class="campo">
+    <span>Resultado</span>
+    <input type="text" readonly [value]="resultado() ?? ''" placeholder="—" />
+  </label>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <div class="historial">
+    <div class="historial-encabezado">
+      <h2>Historial (últimas 5)</h2>
+      @if (historial().length) {
+        <button type="button" class="enlace" (click)="borrarHistorial()">Borrar</button>
+      }
+    </div>
+
+    @if (historial().length) {
+      <ul>
+        @for (registro of historial(); track $index) {
+          <li>
+            <span>{{ registro.expresion }}</span>
+            <strong>= {{ registro.resultado }}</strong>
+          </li>
+        }
+      </ul>
+    } @else {
+      <p class="vacio">Aún no hay operaciones.</p>
+    }
+  </div>
+</section>
