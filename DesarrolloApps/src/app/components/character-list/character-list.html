@@ -1,0 +1,93 @@
+<div class="container">
+  <h1>Catálogo de Personajes - Rick and Morty</h1>
+
+  <input
+    class="buscador"
+    type="text"
+    placeholder="Buscar personaje por nombre..."
+    [value]="busqueda()"
+    (input)="actualizarBusqueda($event)"
+  />
+
+  @if (loading()) {
+    <div class="state-indicator loading">Cargando personajes...</div>
+  }
+
+  @if (errorMessage()) {
+    <div class="state-indicator error">{{ errorMessage() }}</div>
+  }
+
+  @if (!loading() && !errorMessage()) {
+    @if (personajesFiltrados().length === 0) {
+      <div class="state-indicator empty">No se encontraron personajes.</div>
+    } @else {
+      <div class="grid">
+        @for (char of personajesFiltrados(); track char.id) {
+          <div class="card" (click)="verDetalle(char)">
+            <img [src]="char.image" [alt]="char.name" loading="lazy" />
+            <div class="card-body">
+              <h2>{{ char.name }}</h2>
+              <p>
+                <span [class]="'status ' + char.status.toLowerCase()"></span>
+                {{ char.status }} - {{ char.species }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</div>
+
+@if (personajeSeleccionado(); as p) {
+  <div class="overlay" (click)="cerrarDetalle()">
+    <div class="detalle" (click)="$event.stopPropagation()">
+      <button class="cerrar" type="button" (click)="cerrarDetalle()">✕</button>
+      <img [src]="p.image" [alt]="p.name" />
+      <h2>{{ p.name }}</h2>
+      <dl>
+        <dt>ID</dt>
+        <dd>{{ p.id }}</dd>
+
+        <dt>Estado</dt>
+        <dd>
+          <span [class]="'status ' + p.status.toLowerCase()"></span>
+          {{ p.status }}
+        </dd>
+
+        <dt>Especie</dt>
+        <dd>{{ p.species }}</dd>
+
+        <dt>Tipo</dt>
+        <dd>{{ p.type || 'Sin especificar' }}</dd>
+
+        <dt>Género</dt>
+        <dd>{{ p.gender }}</dd>
+
+        <dt>Origen</dt>
+        <dd>{{ p.origin.name }}</dd>
+
+        <dt>Última ubicación</dt>
+        <dd>{{ p.location.name }}</dd>
+
+        <dt>Episodios</dt>
+        <dd>{{ p.episode.length }}</dd>
+
+        <dt>Creado</dt>
+        <dd>{{ p.created | date: 'medium' }}</dd>
+
+        <dt>URL API</dt>
+        <dd><a [href]="p.url" target="_blank" rel="noopener">{{ p.url }}</a></dd>
+      </dl>
+
+      <div class="acciones">
+        <button type="button" class="btn matar" (click)="cambiarEstado('Dead')">Matar</button>
+        <button type="button" class="btn vivir" (click)="cambiarEstado('Alive')">Vivir</button>
+      </div>
+
+      @if (mensajeEstado()) {
+        <p class="mensaje-estado">{{ mensajeEstado() }}</p>
+      }
+    </div>
+  </div>
+}
