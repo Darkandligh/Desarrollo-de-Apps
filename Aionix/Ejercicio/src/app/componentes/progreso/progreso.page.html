@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Progress Bar (ion-progress-bar)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Barra horizontal para indicar el avance de una operación.</p>
+
+<ion-progress-bar [value]="progreso"></ion-progress-bar>
+<ion-button (click)="avanzar()">Avanzar</ion-button>
+</ion-content>

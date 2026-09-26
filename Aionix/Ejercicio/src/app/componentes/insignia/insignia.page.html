@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Badge (ion-badge)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Muestra un contador o etiqueta pequeña, normalmente junto a otro elemento.</p>
+
+<ion-badge color="primary">Nuevo</ion-badge>
+<ion-badge color="success">{{ contador }}</ion-badge>
+<ion-button size="small" (click)="contador = contador + 1">Sumar</ion-button>
+</ion-content>

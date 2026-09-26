@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alert (ion-alert)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Cuadro de diálogo que interrumpe al usuario para confirmar una acción o mostrar un mensaje importante.</p>
+
+<ion-button (click)="mostrarAlert = true">Mostrar alert</ion-button>
+<ion-alert
+  [isOpen]="mostrarAlert"
+  header="¿Estás seguro?"
+  message="Esta acción no se puede deshacer."
+  [buttons]="botones"
+  (didDismiss)="mostrarAlert = false"
+></ion-alert>
+</ion-content>

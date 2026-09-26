@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Popover (ion-popover)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Menú contextual flotante anclado a un elemento disparador.</p>
+
+<ion-button id="abrir-popover">Abrir popover</ion-button>
+<ion-popover trigger="abrir-popover" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item button>Opción A</ion-item>
+        <ion-item button>Opción B</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+</ion-content>

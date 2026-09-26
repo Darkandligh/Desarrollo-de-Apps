@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Card (ion-card)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Agrupa contenido relacionado dentro de un contenedor con elevación.</p>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Ionic</ion-card-subtitle>
+    <ion-card-title>Tarjeta de ejemplo</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Las tarjetas agrupan contenido relacionado.
+    <ion-button expand="block" fill="clear">Ver más</ion-button>
+  </ion-card-content>
+</ion-card>
+</ion-content>

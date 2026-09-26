@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Toast (ion-toast)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Notificación breve que aparece y desaparece automáticamente.</p>
+
+<ion-button (click)="mostrarToast = true">Mostrar toast</ion-button>
+<ion-toast [isOpen]="mostrarToast" message="¡Operación exitosa!" [duration]="2000" (didDismiss)="mostrarToast = false"></ion-toast>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkbox (ion-checkbox)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Selección booleana individual.</p>
+
+<ion-checkbox [(ngModel)]="aceptado">Acepto los términos</ion-checkbox>
+<p>Estado: {{ aceptado ? 'Aceptado' : 'Pendiente' }}</p>
+</ion-content>

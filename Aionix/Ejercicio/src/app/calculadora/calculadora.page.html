@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="calc-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Calculadora</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card class="calc-card">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item lines="none" class="campo">
+              <ion-input
+                label="Número 1"
+                labelPlacement="floating"
+                type="number"
+                inputmode="decimal"
+                placeholder="0"
+                [value]="numero1()"
+                (ionInput)="actualizarNumero1($event)"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item lines="none" class="campo">
+              <ion-input
+                label="Número 2"
+                labelPlacement="floating"
+                type="number"
+                inputmode="decimal"
+                placeholder="0"
+                [value]="numero2()"
+                (ionInput)="actualizarNumero2($event)"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item lines="none" class="campo">
+        <ion-select label="Operación" [value]="operacion()" (ionChange)="actualizarOperacion($event)">
+          <ion-select-option *ngFor="let op of operaciones" [value]="op.valor">{{ op.etiqueta }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="acciones">
+        <ion-button expand="block" (click)="calcular()">
+          <ion-icon slot="start" name="calculator-outline"></ion-icon>
+          Calcular
+        </ion-button>
+        <ion-button expand="block" fill="outline" color="medium" (click)="limpiar()">Limpiar</ion-button>
+      </div>
+
+      <ion-text color="danger" *ngIf="error()">
+        <p class="mensaje-error">{{ error() }}</p>
+      </ion-text>
+
+      <div class="resultado" *ngIf="resultado() !== null">
+        <span class="resultado-label">Resultado</span>
+        <span class="resultado-valor">{{ resultado() }}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list class="historial-lista" [inset]="true">
+    <ion-list-header>
+      <ion-icon name="time-outline" class="historial-icono"></ion-icon>
+      <ion-label>Historial (últimas 5)</ion-label>
+      <ion-button *ngIf="historial().length" fill="clear" size="small" color="medium" (click)="borrarHistorial()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-list-header>
+
+    <ion-item *ngFor="let registro of historial()">
+      <ion-label>{{ registro.expresion }}</ion-label>
+      <ion-note slot="end" color="primary">= {{ registro.resultado }}</ion-note>
+    </ion-item>
+
+    <ion-item *ngIf="!historial().length">
+      <ion-label color="medium">Aún no hay operaciones.</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

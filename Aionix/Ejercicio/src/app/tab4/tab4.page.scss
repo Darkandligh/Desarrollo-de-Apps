@@ -1,0 +1,78 @@
+.contador {
+  margin: 0;
+  padding: 4px 16px 0;
+  font-size: 0.85rem;
+  color: var(--ion-color-medium);
+}
+
+.catalogo-grid {
+  padding: 4px 8px;
+}
+
+.tarjeta-componente {
+  margin: 6px;
+  height: calc(100% - 12px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  ion-card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+
+  ion-card-title {
+    font-size: 1.05rem;
+  }
+
+  ion-card-content {
+    font-size: 0.85rem;
+    color: var(--ion-color-medium-shade);
+  }
+}
+
+.icono-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ion-color-primary) 12%, transparent);
+
+  ion-icon {
+    font-size: 22px;
+  }
+
+  &[color='secondary'] {
+    background: color-mix(in srgb, var(--ion-color-secondary) 14%, transparent);
+  }
+  &[color='tertiary'] {
+    background: color-mix(in srgb, var(--ion-color-tertiary) 14%, transparent);
+  }
+  &[color='success'] {
+    background: color-mix(in srgb, var(--ion-color-success) 14%, transparent);
+  }
+  &[color='warning'] {
+    background: color-mix(in srgb, var(--ion-color-warning) 16%, transparent);
+  }
+  &[color='danger'] {
+    background: color-mix(in srgb, var(--ion-color-danger) 14%, transparent);
+  }
+}
+
+.sin-resultados {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--ion-color-medium);
+}

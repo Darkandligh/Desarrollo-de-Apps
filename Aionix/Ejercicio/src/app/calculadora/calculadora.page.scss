@@ -1,0 +1,61 @@
+.calc-content {
+  --background: var(--ion-color-light);
+}
+
+.calc-card {
+  margin: 16px;
+  border-radius: 16px;
+}
+
+.campo {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.mensaje-error {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+}
+
+.resultado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ion-color-primary) 10%, transparent);
+}
+
+.resultado-label {
+  font-size: 0.85rem;
+  color: var(--ion-color-medium-shade);
+}
+
+.resultado-valor {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ion-color-primary);
+}
+
+.historial-lista {
+  margin: 16px;
+
+  ion-list-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.historial-icono {
+  font-size: 18px;
+  color: var(--ion-color-medium);
+}

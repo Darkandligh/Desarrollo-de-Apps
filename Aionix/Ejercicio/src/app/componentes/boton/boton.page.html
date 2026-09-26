@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Botón (ion-button)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Acción principal de la interfaz. Soporta variantes de color y relleno (fill).</p>
+
+<ion-button (click)="mensaje = '¡Botón presionado!'">Presionar</ion-button>
+<ion-button color="secondary" fill="outline">Outline</ion-button>
+<ion-button color="danger" fill="clear">Clear</ion-button>
+<p>{{ mensaje }}</p>
+</ion-content>

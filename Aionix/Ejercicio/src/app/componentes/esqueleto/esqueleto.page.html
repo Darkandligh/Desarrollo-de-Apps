@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Skeleton Text (ion-skeleton-text)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Marcador de posición animado mientras el contenido real carga.</p>
+
+<ion-button (click)="cargando = !cargando">{{ cargando ? 'Terminar carga' : 'Reiniciar' }}</ion-button>
+<ion-item>
+  <ion-avatar slot="start">
+    <ion-skeleton-text *ngIf="cargando" [animated]="true"></ion-skeleton-text>
+    <img *ngIf="!cargando" src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="avatar" />
+  </ion-avatar>
+  <ion-label>
+    <h3 *ngIf="cargando"><ion-skeleton-text [animated]="true" style="width: 60%"></ion-skeleton-text></h3>
+    <h3 *ngIf="!cargando">Nombre real</h3>
+  </ion-label>
+</ion-item>
+</ion-content>

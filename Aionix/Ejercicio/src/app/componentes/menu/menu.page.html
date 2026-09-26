@@ -1,0 +1,31 @@
+<ion-menu contentId="menu-demo-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button>Opción 1</ion-item>
+      <ion-item button>Opción 2</ion-item>
+      <ion-item button>Opción 3</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="menu-demo-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Menu (ion-menu)</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <p>Deslizá desde el borde izquierdo o tocá el botón de la derecha para abrir el menú.</p>
+  </ion-content>
+</div>

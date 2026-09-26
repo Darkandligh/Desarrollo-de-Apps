@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Loading (ion-loading)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Overlay que indica una operación en progreso.</p>
+
+<ion-button (click)="mostrarCarga = true">Mostrar carga</ion-button>
+<ion-loading [isOpen]="mostrarCarga" message="Cargando..." [duration]="2000" (didDismiss)="mostrarCarga = false"></ion-loading>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Radio (ion-radio)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Selección única dentro de un grupo de opciones.</p>
+
+<ion-radio-group [(ngModel)]="nivel">
+  <ion-list>
+    <ion-item><ion-radio value="principiante">Principiante</ion-radio></ion-item>
+    <ion-item><ion-radio value="intermedio">Intermedio</ion-radio></ion-item>
+    <ion-item><ion-radio value="avanzado">Avanzado</ion-radio></ion-item>
+  </ion-list>
+</ion-radio-group>
+<p>Nivel elegido: {{ nivel }}</p>
+</ion-content>

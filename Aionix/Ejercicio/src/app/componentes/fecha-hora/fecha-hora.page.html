@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datetime (ion-datetime)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Selector nativo de fecha y/o hora.</p>
+
+<ion-datetime presentation="date" [(ngModel)]="fecha"></ion-datetime>
+<p>Seleccionado: {{ fecha }}</p>
+</ion-content>

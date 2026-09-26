@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Range (ion-range)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Deslizador para elegir un valor numérico dentro de un rango.</p>
+
+<ion-range [(ngModel)]="volumen" min="0" max="100">
+  <ion-label slot="start">0</ion-label>
+  <ion-label slot="end">100</ion-label>
+</ion-range>
+<p>Volumen: {{ volumen }}</p>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Textarea (ion-textarea)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Campo de texto multilínea con auto-crecimiento opcional.</p>
+
+<ion-textarea label="Comentario" labelPlacement="floating" [autoGrow]="true" [(ngModel)]="comentario"></ion-textarea>
+<p>Caracteres: {{ comentario.length }}</p>
+</ion-content>

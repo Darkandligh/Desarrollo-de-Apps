@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Segment (ion-segment)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Control de pestañas para alternar entre vistas relacionadas.</p>
+
+<ion-segment [(ngModel)]="vista">
+  <ion-segment-button value="lista"><ion-label>Lista</ion-label></ion-segment-button>
+  <ion-segment-button value="grilla"><ion-label>Grilla</ion-label></ion-segment-button>
+</ion-segment>
+<p>Vista activa: {{ vista }}</p>
+</ion-content>

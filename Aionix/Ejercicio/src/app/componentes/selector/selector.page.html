@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Select (ion-select)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Menú desplegable para elegir una opción entre varias.</p>
+
+<ion-select label="País" placeholder="Elegí uno" [(ngModel)]="pais">
+  <ion-select-option value="ar">Argentina</ion-select-option>
+  <ion-select-option value="cl">Chile</ion-select-option>
+  <ion-select-option value="uy">Uruguay</ion-select-option>
+</ion-select>
+<p>Seleccionado: {{ pais }}</p>
+</ion-content>

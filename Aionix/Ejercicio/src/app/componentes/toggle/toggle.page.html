@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Toggle (ion-toggle)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Interruptor on/off.</p>
+
+<ion-toggle [(ngModel)]="notificaciones">Notificaciones</ion-toggle>
+<p>{{ notificaciones ? 'Activadas' : 'Desactivadas' }}</p>
+</ion-content>

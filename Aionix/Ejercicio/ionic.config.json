@@ -1,0 +1,7 @@
+{
+  "name": "Ejercicio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

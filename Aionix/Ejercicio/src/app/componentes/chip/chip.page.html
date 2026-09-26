@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Chip (ion-chip)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Etiqueta compacta para representar una entrada, atributo o acción.</p>
+
+<ion-chip color="primary"><ion-label>Angular</ion-label></ion-chip>
+<ion-chip color="secondary" *ngIf="visible" (click)="visible = false">
+  <ion-label>Eliminable</ion-label>
+  <ion-icon name="close-circle"></ion-icon>
+</ion-chip>
+</ion-content>

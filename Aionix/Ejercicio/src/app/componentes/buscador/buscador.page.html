@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Searchbar (ion-searchbar)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Campo de búsqueda con estilo nativo y botón de limpiar.</p>
+
+<ion-searchbar [(ngModel)]="termino" placeholder="Buscar fruta"></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let f of filtradas"><ion-label>{{ f }}</ion-label></ion-item>
+</ion-list>
+</ion-content>

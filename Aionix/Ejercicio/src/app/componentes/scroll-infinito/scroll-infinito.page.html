@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Infinite Scroll (ion-infinite-scroll)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Carga más contenido automáticamente al llegar al final de la lista.</p>
+
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    <ion-label>Elemento {{ item }}</ion-label>
+  </ion-item>
+</ion-list>
+<ion-infinite-scroll (ionInfinite)="cargarMas($event)">
+  <ion-infinite-scroll-content loadingText="Cargando más..."></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Accordion (ion-accordion)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <p>Paneles colapsables para mostrar u ocultar contenido.</p>
+
+<ion-accordion-group>
+  <ion-accordion value="primero">
+    <ion-item slot="header"><ion-label>¿Qué es Ionic?</ion-label></ion-item>
+    <div class="ion-padding" slot="content">Un framework para crear apps híbridas con tecnologías web.</div>
+  </ion-accordion>
+  <ion-accordion value="segundo">
+    <ion-item slot="header"><ion-label>¿Qué es un componente?</ion-label></ion-item>
+    <div class="ion-padding" slot="content">Una pieza de interfaz reutilizable con su propia lógica.</div>
+  </ion-accordion>
+</ion-accordion-group>
+</ion-content>
